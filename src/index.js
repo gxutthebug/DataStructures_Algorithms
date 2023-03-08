@@ -1,7 +1,10 @@
 import {LinkedList} from '../linklist/LinkedList'
 import { my_set } from '../set/set'
 // import "./object_function"
-import {map } from "../map/map"
+// import {map } from "../map/map"
+// import  "../Algoritjms/middle"
+// import "../mapANDobject/test"
+import "../setANDarr/test"
 
 
 // let aa = new LinkedList()
@@ -51,6 +54,22 @@ console.log('-------------------------------------------------------------')
 
 // console.log(aa.inSubsetof(bb))
 console.log('-------------------------------------------------------------')
+
+
+   
+// let aa = [1,2]
+// let bb = []
+// bb.push(aa)
+// console.log(bb)
+// bb.push([3,4])
+// aa[0]= 5
+// aa[1]=6
+// bb.push(aa)
+// console.log(bb)
+// bb.push(7,8)
+// console.log(bb)
+
+
 
 
 
