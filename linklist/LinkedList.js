@@ -15,9 +15,9 @@ export class LinkedList {
     //           ③ 若有元素：是否处理head结点;处理head结点时考虑是否单元素的差异(能处理非结点隐式说明了链表非单元素)
    
       
-     // 两种遍历: ①while遍历 ②索引遍历
+     // 两种遍历: ① !=NULL   ② Size遍历
 
-     //  简写优化： 找逻辑重复
+     //  尾插 (尾插可以再提取封装出一个getlastnode())
     push(element) {
         const node = new Node(element) // JS的class用法跟构造函数一样
         let current
@@ -32,8 +32,27 @@ export class LinkedList {
         }
         this.count++
     }
+     
+    // 头插
+    addfrist(element) {
+        const node = new Node(element) 
+        if(this.head = null) {
+            this.head = node
+        }else {
+            node.next = this.head
+            this.head = node
+        }
+    }
     
-    
+    // 头删
+    removeFirst () {
+        if (this.head = null) {
+            return "链表为空"
+        }
+
+        this.head = head.next
+    }
+
     removeAt (index) {
         if (index >= 0 && index < this.count) { // index < this.count除了限制越界外 
             // 还限制了链表本身为空的情况 , 因为链表空了的话count ====0 , index能小于count说明count不能是0
@@ -186,19 +205,69 @@ export class LinkedList {
     getHead() {
         return this.head
     }
-}
 
+    /*-------------------------- 不用Size的遍历方式: 并且提取 getlastnode() ----------------------------------------*/ 
+    /*---------------------------以下方法只是写来拓展思路 我并没有验证....-----------------------------------------------------*/ 
 
+    getlastnode() {
 
+        if (this.head = null) {
+            return null
+        }
+        
+        let cur 
+        for(cur = this.head ; cur !=null ; cur = cur.next){
 
+        }
 
-export class DoublyLinkedList extends LinkedList {
-      
-    constructor(equalsFn = defaultEquals) {
-        super(equalsFn)
-        this.tail = null  // 双向链表新增的尾指针
+        return cur
     }
-   
 
-   //方法略
+     push2(element) {
+        const node = new Node(element)
+        let lastnode = this.getlastnode()
+        if (lastnode = null) {
+            this.addfrist(element)
+            return
+        }
+        lastnode.next = node
+     }
+
+     getElementAt2 (index) {
+         let i = 0
+         // 这里偷懒就不验证 index 是否越界啦 ;详细看上面
+         let cur 
+         for(cur = this.head ; cur !=null ; cur = cur.next , i++){
+             if (i === index) {
+                return cur
+             }
+         }
+         return null
+     }
+
+     insert(element , index) { 
+
+          if(index == 0 ) {
+            this.addfrist(element)
+            return
+          }
+
+          let prev = this.getElementAt2(index-1)
+
+          if(prev == null){
+             return "找不到"
+          }
+          
+          let node = new Node(element)
+          node.next = prev.next
+          prev.next  = node
+     }
+     
+     
 }
+
+
+
+
+
+

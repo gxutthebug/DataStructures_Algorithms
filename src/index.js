@@ -4,7 +4,7 @@ import { my_set } from '../set/set'
 // import {map } from "../map/map"
 // import  "../Algoritjms/middle"
 // import "../mapANDobject/test"
-import "../setANDarr/test"
+// import "../setANDarr/test"
 
 
 // let aa = new LinkedList()
@@ -70,6 +70,21 @@ console.log('-------------------------------------------------------------')
 // console.log(bb)
 
 
+console.log('-------------------------------------------------------------')
 
+var removeElement = function(nums, val) {
+     
+    // let newarr = nums.filter( item =>{
+    //     return  item != val
+    //  })
+      for(let i of nums){
+          if(i===val){
+              nums.remove(i)
+          }
+      }
 
+    return news
 
+};
+
+console.log(removeElement([0,1,2,2,3,0,4,2],2))
